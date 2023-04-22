@@ -1,4 +1,4 @@
-export default function PopupMenu({ pop, setPop }) {
+export default function PopupMenu({ pop, setPop, timeTest, setTimeTest }) {
   const style = {
     position: "relative",
     width: "310px",
@@ -17,6 +17,10 @@ export default function PopupMenu({ pop, setPop }) {
   const handleClick = () => {
     alert("Сохранено!!!");
     setPop(!pop);
+  };
+
+  const handleTest = (e) => {
+    setTimeTest(e.target.value);
   };
 
   return (
@@ -61,6 +65,8 @@ export default function PopupMenu({ pop, setPop }) {
       <div>
         <div className="input-group mb-3">
           <input
+            onChange={handleTest}
+            value={timeTest}
             type="text"
             className="form-control"
             placeholder="Количество тестов"

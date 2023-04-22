@@ -10,10 +10,10 @@ export default function ContentButtons() {
     { title: "Настройки", link: Settings, href: "/Settings" }
   ];
 
-  const btnElm = buttonsElem.map((buttonElem) => (
-    <NavLink to={buttonElem.href}>
+  const btnElm = buttonsElem.map((buttonElem, i) => (
+    <NavLink to={buttonElem.href} key={i}>
       <button
-        key={buttonElem.toString()}
+        key={buttonElem.title}
         type="button"
         className="btn btn-lg bg-light text-success text-start mb-3 btn-outline-success"
       >

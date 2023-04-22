@@ -5,7 +5,6 @@ import Header from "./HeaderFooterComp/Header";
 import ContentPageOne from "./ContentElem/ContentPageOne";
 import ContentPageTwo from "./ContentElem/ContentPageTwo";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import state from "../Redux/State";
 
 export default function App() {
   return (
@@ -21,10 +20,7 @@ export default function App() {
       <Router>
         <Routes>
           <Route path="/" element={<ContentPageOne />} />
-          <Route
-            path="/NewModel"
-            element={<ContentPageTwo state={state.infoImg} />}
-          />
+          <Route path="/NewModel" element={<ContentPageTwo />} />
         </Routes>
       </Router>
       <Footer />

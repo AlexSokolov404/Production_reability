@@ -1,6 +1,8 @@
 //import react from "react";
 import "./style.css";
 
+let today = new Date();
+
 export default function Footer() {
   return (
     <div
@@ -16,7 +18,7 @@ export default function Footer() {
           marginTop: "5px"
         }}
       >
-        VA VKO 2021
+        VA VKO {today.getFullYear()}
       </h4>
       <div className="progress" style={{ width: "25%" }}>
         <div

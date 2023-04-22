@@ -19,9 +19,7 @@ const style = {
   width: "100%",
   height: "100%",
   borderRadius: "10px",
-  border: "solid 2px black",
-  borderColor: "#6f47d7",
-  backgroundColor: "white",
+  backgroundColor: "#FFFAFA",
   zIndex: "10"
 };
 
@@ -52,60 +50,25 @@ const data = [
   }
 ];
 
-const dataTwo = [
-  {
-    name: "1",
-    uv: 553,
-    amt: 2400
-  },
-  {
-    name: "2",
-    uv: 123,
-    amt: 2210
-  },
-  {
-    name: "3",
-    uv: 754,
-    amt: 2290
-  },
-  {
-    name: "4",
-    uv: 565,
-    amt: 2000
-  },
-  {
-    name: "5",
-    uv: 947,
-    amt: 2181
-  },
-  {
-    name: "6",
-    uv: 352,
-    amt: 2500
-  },
-  {
-    name: "7",
-    uv: 756,
-    amt: 2100
-  },
-  {
-    name: "8",
-    uv: 463,
-    amt: 2100
-  },
-  {
-    name: "9",
-    uv: 564,
-    amt: 2100
-  },
-  {
-    name: "10",
-    uv: 342,
-    amt: 2100
-  }
-];
+function getRandomInt(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min)) + min; //Максимум не включается, минимум включается
+}
 
-export default function ChartPage() {
+const getData = (value) => {
+  let obj = [];
+  while (value--) {
+    obj.push({
+      uv: getRandomInt(1000, 10000),
+      amt: getRandomInt(1000, 10000)
+    });
+  }
+
+  return obj;
+};
+
+export default function ChartPage({ timeTest }) {
   return (
     <div style={style} className="container">
       <div className="row row-cols-2">
@@ -119,7 +82,7 @@ export default function ChartPage() {
           className="col"
           width={500}
           height={300}
-          data={dataTwo}
+          data={getData(timeTest)}
           margin={{
             top: 5,
             right: 30,
@@ -138,7 +101,7 @@ export default function ChartPage() {
           className="col"
           width={500}
           height={300}
-          data={dataTwo}
+          data={getData(timeTest)}
           margin={{
             top: 5,
             right: 30,
@@ -164,7 +127,7 @@ export default function ChartPage() {
           className="col"
           width={500}
           height={300}
-          data={dataTwo}
+          data={getData(timeTest)}
           margin={{
             top: 5,
             right: 30,

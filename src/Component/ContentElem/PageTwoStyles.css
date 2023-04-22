@@ -28,6 +28,23 @@
   border: 1px solid #6f47d7;
   border-radius: 10px 10px 0 0;
   color: white;
+
+  -ms-user-select: none;
+
+  /**
+             * Для мозилы
+             */
+  -moz-user-select: none;
+
+  /**
+             * Для конкверора
+             */
+  -khtml-user-select: none;
+
+  /**
+             * Для Сафари и Хрома
+             */
+  -webkit-user-select: none;
 }
 
 .elementArea {
@@ -35,9 +52,26 @@
 
   border: 1px solid #6f47d7;
   border-radius: 0 0 10px 10px;
+
+  -ms-user-select: none;
+
+  /**
+             * Для мозилы
+             */
+  -moz-user-select: none;
+
+  /**
+             * Для конкверора
+             */
+  -khtml-user-select: none;
+
+  /**
+             * Для Сафари и Хрома
+             */
+  -webkit-user-select: none;
 }
 
-.dropElementArea {
+.reactflow-wrapper {
   grid-area: C;
 
   border: 1px solid #6f47d7;
