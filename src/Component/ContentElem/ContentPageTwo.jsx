@@ -46,11 +46,6 @@ const customSwitchNodeStyle = {
   width: "50px"
 };
 
-const styleLines = {
-  stroke: "#ddd",
-  strokeWidth: "2"
-};
-
 const styleLabel = {
   color: "white",
   backgroundColor: "rgba(0, 0, 0, 0.5)",
@@ -83,13 +78,18 @@ const getId = (type) => {
 
 ////------->главная функция
 
-const ContentPageTwo = () => {
+const ContentPageTwo = ({ settingPropertie }) => {
   const [chart, setChart] = useState(false);
   const [timeTest, setTimeTest] = useState(30);
 
   const reactFlowWrapper = useRef(null);
   const [reactFlowInstance, setReactFlowInstance] = useState(null);
   const [elements, setElements] = useState(initialElements);
+
+  const styleLines = {
+    stroke: settingPropertie[1].colorLine,
+    strokeWidth: settingPropertie[3].value
+  };
 
   const CustomArmNode = ({ id }) => {
     return (
@@ -143,8 +143,11 @@ const ContentPageTwo = () => {
         addEdge(
           {
             ...params,
-            animated: true,
-            style: { stroke: "#ddd", strokeWidth: 2 }
+            animated: settingPropertie[2].active,
+            style: {
+              stroke: settingPropertie[1].colorLine,
+              strokeWidth: settingPropertie[3].value
+            }
           },
           els
         )

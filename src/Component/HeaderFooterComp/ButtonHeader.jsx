@@ -1,5 +1,5 @@
 import { Component } from "react";
-//import SubText from "./SdbText";
+import { NavLink } from "react-router-dom";
 
 class ButtonHeader extends Component {
   render() {
@@ -20,11 +20,13 @@ class ButtonHeader extends Component {
         </button>
         <ul className="dropdown-menu">
           {text.text.map((subtext) => (
-            <li key={subtext.toString()} className="nav-item">
-              <a className="nav-link" href="123.com">
-                {subtext}
-              </a>
-            </li>
+            <NavLink to={text.link[subtext]} key={subtext.toString()}>
+              <li className="nav-item">
+                <a className="nav-link" href={text.link[subtext]}>
+                  {subtext}
+                </a>
+              </li>
+            </NavLink>
           ))}
         </ul>
       </div>
